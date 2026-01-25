@@ -1,0 +1,22 @@
+{
+  "experiment_name": "gru_word2vec_baseline",
+  "model_type": "gru",
+  "embedding_type": "word2vec",
+  "embedding_dim": 50,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.2752752752752753,
+  "val_loss": 1.7926616668701172,
+  "macro_f1": 0.07770194238930872,
+  "training_time": 515.4906439781189,
+  "epochs_trained": 28,
+  "best_val_accuracy": 0.3498498499393463,
+  "per_class_f1": [
+    0.432753164556962,
+    0.0028368794326241137,
+    0.0,
+    0.0070921985815602835,
+    0.0,
+    0.023529411764705882
+  ]
+}

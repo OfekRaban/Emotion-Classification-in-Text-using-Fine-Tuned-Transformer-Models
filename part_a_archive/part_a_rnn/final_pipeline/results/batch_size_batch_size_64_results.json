@@ -1,0 +1,22 @@
+{
+  "experiment_name": "batch_size_batch_size_64",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.34884884884884887,
+  "val_loss": 1.789559245109558,
+  "macro_f1": 0.09104924031269017,
+  "training_time": 291.04903626441956,
+  "epochs_trained": 22,
+  "best_val_accuracy": 0.3488488495349884,
+  "per_class_f1": [
+    0.021015761821366025,
+    0.5182125422455877,
+    0.0,
+    0.007067137809187279,
+    0.0,
+    0.0
+  ]
+}

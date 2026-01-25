@@ -1,0 +1,157 @@
+2025-12-17 14:12:52,893 - INFO - Random seed set to: 42
+2025-12-17 14:12:53,735 - INFO - ================================================================================
+2025-12-17 14:12:53,736 - INFO - EXPERIMENT CONFIGURATION
+2025-12-17 14:12:53,736 - INFO - ================================================================================
+2025-12-17 14:12:53,736 - INFO - Experiment: ultimate_emotion_detection
+2025-12-17 14:12:53,736 - INFO - Model: LSTM
+2025-12-17 14:12:53,736 - INFO - RNN Units: 128, Layers: 1
+2025-12-17 14:12:53,736 - INFO - Embedding: GLOVE, Dim: 100, Trainable: False
+2025-12-17 14:12:53,736 - INFO - Ablation - Aggressive Norm: True
+2025-12-17 14:12:53,736 - INFO - Ablation - Elongation Norm: True
+2025-12-17 14:12:53,736 - INFO - Random Seed: 42
+2025-12-17 14:12:53,736 - INFO - ================================================================================
+2025-12-17 14:12:53,736 - INFO - Loading datasets...
+2025-12-17 14:12:53,793 - INFO - Loaded 16000 training and 2000 validation samples
+2025-12-17 14:12:57,466 - INFO - Preprocessing 16000 samples...
+2025-12-17 14:12:59,657 - INFO - Preprocessing Statistics:
+2025-12-17 14:12:59,657 - INFO -   Avg tokens before: 19.17
+2025-12-17 14:12:59,657 - INFO -   Avg tokens after: 19.44
+2025-12-17 14:12:59,657 - INFO -   Texts modified: 3850 (24.1%)
+2025-12-17 14:12:59,658 - INFO - Preprocessing 2000 samples...
+2025-12-17 14:12:59,934 - INFO - Preprocessing Statistics:
+2025-12-17 14:12:59,935 - INFO -   Avg tokens before: 18.87
+2025-12-17 14:12:59,935 - INFO -   Avg tokens after: 19.14
+2025-12-17 14:12:59,935 - INFO -   Texts modified: 4338 (216.9%)
+2025-12-17 14:12:59,939 - WARNING - Removed 34 duplicates
+2025-12-17 14:12:59,941 - WARNING - Data leakage: 5 overlapping texts found
+2025-12-17 14:12:59,944 - INFO - Creating tokenizer with max_words=20000...
+2025-12-17 14:13:00,214 - INFO - Tokenizer created. Vocabulary size: 15156
+2025-12-17 14:13:00,215 - INFO - Total unique words: 15156
+2025-12-17 14:13:00,402 - INFO - Sequence Length Analysis:
+2025-12-17 14:13:00,402 - INFO -   Mean: 19.45, Median: 17
+2025-12-17 14:13:00,403 - INFO -   Max: 70, Min: 2
+2025-12-17 14:13:00,403 - INFO -   Truncated: 16 (0.1%)
+2025-12-17 14:13:01,112 - INFO - Converted 15966 texts to sequences of length 60
+2025-12-17 14:13:01,142 - INFO - Converted 1995 texts to sequences of length 60
+2025-12-17 14:13:01,234 - INFO - Tokenizer saved to configs/tokenizer.json
+2025-12-17 14:13:01,234 - INFO - Loading GloVe embeddings from /home/lab/rabanof/Emotion_Detection_DL/glove/glove.6B.100d.txt...
+2025-12-17 14:13:08,636 - INFO - Loaded 400000 word vectors
+2025-12-17 14:13:08,725 - INFO - Embedding Matrix Created:
+2025-12-17 14:13:08,725 - INFO -   Shape: (15157, 100)
+2025-12-17 14:13:08,725 - INFO -   Coverage: 14198/15156 (93.68%)
+2025-12-17 14:13:08,725 - INFO -   OOV: 958 (6.32%)
+2025-12-17 14:13:08,876 - INFO - Embedding matrix saved to saved_models/embedding_matrix.npy
+2025-12-17 14:13:08,876 - INFO - Building LSTM model...
+2025-12-17 14:13:09,205 - INFO - Model built successfully!
+2025-12-17 14:13:09,206 - INFO -   Type: LSTM
+2025-12-17 14:13:09,206 - INFO -   Units: 128, Layers: 1
+2025-12-17 14:13:09,206 - INFO -   Trainable embeddings: False
+2025-12-17 14:13:09,206 - INFO -   Total parameters: 1,633,722
+2025-12-17 14:13:09,211 - INFO - Class weights computed: {0: 0.5707850707850708, 1: 0.4974761637689288, 2: 2.048498845265589, 3: 1.2348027842227378, 4: 1.3766166580444905, 5: 4.684859154929577}
+2025-12-17 14:13:29,881 - INFO - Epoch 1 completed in 20.54s - val_acc: 0.3419
+2025-12-17 14:13:46,572 - INFO - Epoch 2 completed in 16.39s - val_acc: 0.0902
+2025-12-17 14:14:08,024 - INFO - Epoch 3 completed in 21.36s - val_acc: 0.3454
+2025-12-17 14:14:26,577 - INFO - Epoch 4 completed in 18.35s - val_acc: 0.2737
+2025-12-17 14:14:44,014 - INFO - Epoch 5 completed in 17.35s - val_acc: 0.0596
+2025-12-17 14:15:00,912 - INFO - Epoch 6 completed in 16.81s - val_acc: 0.1514
+2025-12-17 14:15:23,372 - INFO - Epoch 7 completed in 22.37s - val_acc: 0.1875
+2025-12-17 14:15:47,005 - INFO - Epoch 8 completed in 23.54s - val_acc: 0.2637
+2025-12-17 14:16:06,288 - INFO - Epoch 9 completed in 19.19s - val_acc: 0.3810
+2025-12-17 14:16:29,845 - INFO - Epoch 10 completed in 23.37s - val_acc: 0.3313
+2025-12-17 14:16:53,029 - INFO - Epoch 11 completed in 23.08s - val_acc: 0.4110
+2025-12-17 14:17:15,940 - INFO - Epoch 12 completed in 22.72s - val_acc: 0.4622
+2025-12-17 14:17:34,064 - INFO - Epoch 13 completed in 17.94s - val_acc: 0.5549
+2025-12-17 14:17:53,124 - INFO - Epoch 14 completed in 18.87s - val_acc: 0.5178
+2025-12-17 14:18:12,332 - INFO - Epoch 15 completed in 19.12s - val_acc: 0.5243
+2025-12-17 14:18:33,028 - INFO - Epoch 16 completed in 20.59s - val_acc: 0.6506
+2025-12-17 14:18:54,940 - INFO - Epoch 17 completed in 21.73s - val_acc: 0.6331
+2025-12-17 14:19:14,232 - INFO - Epoch 18 completed in 19.19s - val_acc: 0.6937
+2025-12-17 14:19:33,869 - INFO - Epoch 19 completed in 19.46s - val_acc: 0.7208
+2025-12-17 14:19:55,497 - INFO - Epoch 20 completed in 21.44s - val_acc: 0.7188
+2025-12-17 14:20:18,616 - INFO - Epoch 21 completed in 23.02s - val_acc: 0.8100
+2025-12-17 14:20:41,045 - INFO - Epoch 22 completed in 22.24s - val_acc: 0.7489
+2025-12-17 14:21:02,168 - INFO - Epoch 23 completed in 21.02s - val_acc: 0.8070
+2025-12-17 14:21:23,647 - INFO - Epoch 24 completed in 21.38s - val_acc: 0.8296
+2025-12-17 14:21:45,928 - INFO - Epoch 25 completed in 22.09s - val_acc: 0.8737
+2025-12-17 14:22:08,008 - INFO - Epoch 26 completed in 21.88s - val_acc: 0.8612
+2025-12-17 14:22:29,112 - INFO - Epoch 27 completed in 21.01s - val_acc: 0.8632
+2025-12-17 14:22:52,812 - INFO - Epoch 28 completed in 23.61s - val_acc: 0.8672
+2025-12-17 14:23:13,087 - INFO - Epoch 29 completed in 20.18s - val_acc: 0.8436
+2025-12-17 14:23:32,407 - INFO - Epoch 30 completed in 19.22s - val_acc: 0.8817
+2025-12-17 14:23:54,140 - INFO - Epoch 31 completed in 21.54s - val_acc: 0.8757
+2025-12-17 14:24:15,235 - INFO - Epoch 32 completed in 21.00s - val_acc: 0.8932
+2025-12-17 14:24:38,778 - INFO - Epoch 33 completed in 23.34s - val_acc: 0.8922
+2025-12-17 14:25:01,598 - INFO - Epoch 34 completed in 22.71s - val_acc: 0.8862
+2025-12-17 14:25:24,814 - INFO - Epoch 35 completed in 23.12s - val_acc: 0.9018
+2025-12-17 14:25:48,238 - INFO - Epoch 36 completed in 23.23s - val_acc: 0.9073
+2025-12-17 14:25:52,603 - INFO - Random seed set to: 42
+2025-12-17 14:25:52,798 - INFO - ================================================================================
+2025-12-17 14:25:52,798 - INFO - EXPERIMENT CONFIGURATION
+2025-12-17 14:25:52,798 - INFO - ================================================================================
+2025-12-17 14:25:52,798 - INFO - Experiment: ultimate_emotion_detection
+2025-12-17 14:25:52,798 - INFO - Model: LSTM
+2025-12-17 14:25:52,798 - INFO - RNN Units: 128, Layers: 1
+2025-12-17 14:25:52,798 - INFO - Embedding: GLOVE, Dim: 100, Trainable: False
+2025-12-17 14:25:52,798 - INFO - Ablation - Aggressive Norm: True
+2025-12-17 14:25:52,798 - INFO - Ablation - Elongation Norm: True
+2025-12-17 14:25:52,798 - INFO - Random Seed: 42
+2025-12-17 14:25:52,799 - INFO - ================================================================================
+2025-12-17 14:25:52,799 - INFO - Loading datasets...
+2025-12-17 14:25:52,849 - INFO - Loaded 16000 training and 2000 validation samples
+2025-12-17 14:25:56,348 - INFO - Preprocessing 16000 samples...
+2025-12-17 14:25:58,543 - INFO - Preprocessing Statistics:
+2025-12-17 14:25:58,543 - INFO -   Avg tokens before: 19.17
+2025-12-17 14:25:58,543 - INFO -   Avg tokens after: 19.44
+2025-12-17 14:25:58,543 - INFO -   Texts modified: 3850 (24.1%)
+2025-12-17 14:25:58,545 - INFO - Preprocessing 2000 samples...
+2025-12-17 14:25:58,821 - INFO - Preprocessing Statistics:
+2025-12-17 14:25:58,822 - INFO -   Avg tokens before: 18.87
+2025-12-17 14:25:58,822 - INFO -   Avg tokens after: 19.14
+2025-12-17 14:25:58,822 - INFO -   Texts modified: 4338 (216.9%)
+2025-12-17 14:25:58,825 - WARNING - Removed 34 duplicates
+2025-12-17 14:25:58,828 - WARNING - Data leakage: 5 overlapping texts found
+2025-12-17 14:25:58,830 - INFO - Creating tokenizer with max_words=20000...
+2025-12-17 14:25:59,106 - INFO - Tokenizer created. Vocabulary size: 15156
+2025-12-17 14:25:59,106 - INFO - Total unique words: 15156
+2025-12-17 14:25:59,302 - INFO - Sequence Length Analysis:
+2025-12-17 14:25:59,303 - INFO -   Mean: 19.45, Median: 17
+2025-12-17 14:25:59,303 - INFO -   Max: 70, Min: 2
+2025-12-17 14:25:59,303 - INFO -   Truncated: 16 (0.1%)
+2025-12-17 14:25:59,993 - INFO - Converted 15966 texts to sequences of length 60
+2025-12-17 14:26:00,023 - INFO - Converted 1995 texts to sequences of length 60
+2025-12-17 14:26:00,071 - INFO - Tokenizer saved to configs/tokenizer.json
+2025-12-17 14:26:00,071 - INFO - Loading GloVe embeddings from /home/lab/rabanof/Emotion_Detection_DL/glove/glove.6B.100d.txt...
+2025-12-17 14:26:07,325 - INFO - Loaded 400000 word vectors
+2025-12-17 14:26:07,407 - INFO - Embedding Matrix Created:
+2025-12-17 14:26:07,407 - INFO -   Shape: (15157, 100)
+2025-12-17 14:26:07,407 - INFO -   Coverage: 14198/15156 (93.68%)
+2025-12-17 14:26:07,407 - INFO -   OOV: 958 (6.32%)
+2025-12-17 14:26:07,556 - INFO - Embedding matrix saved to saved_models/embedding_matrix.npy
+2025-12-17 14:26:07,556 - INFO - Building LSTM model...
+2025-12-17 14:26:07,725 - INFO - Epoch 37 completed in 19.29s - val_acc: 0.9088
+2025-12-17 14:26:07,892 - INFO - Model built successfully!
+2025-12-17 14:26:07,892 - INFO -   Type: LSTM
+2025-12-17 14:26:07,892 - INFO -   Units: 128, Layers: 1
+2025-12-17 14:26:07,892 - INFO -   Trainable embeddings: False
+2025-12-17 14:26:07,893 - INFO -   Total parameters: 1,633,722
+2025-12-17 14:26:07,898 - INFO - Class weights computed: {0: 0.5707850707850708, 1: 0.4974761637689288, 2: 2.048498845265589, 3: 1.2348027842227378, 4: 1.3766166580444905, 5: 4.684859154929577}
+2025-12-17 14:26:25,544 - INFO - Epoch 1 completed in 17.53s - val_acc: 0.3409
+2025-12-17 14:26:29,133 - INFO - Epoch 38 completed in 21.22s - val_acc: 0.9048
+2025-12-17 14:26:47,071 - INFO - Epoch 2 completed in 21.24s - val_acc: 0.0912
+2025-12-17 14:26:50,974 - INFO - Epoch 39 completed in 21.75s - val_acc: 0.9138
+2025-12-17 14:27:11,967 - INFO - Epoch 40 completed in 20.81s - val_acc: 0.9038
+2025-12-17 14:27:32,114 - INFO - Epoch 41 completed in 20.06s - val_acc: 0.9093
+2025-12-17 14:27:54,334 - INFO - Epoch 42 completed in 22.13s - val_acc: 0.9128
+2025-12-17 14:28:16,623 - INFO - Epoch 43 completed in 22.19s - val_acc: 0.9138
+2025-12-17 14:28:38,946 - INFO - Epoch 44 completed in 22.23s - val_acc: 0.9173
+2025-12-17 14:29:00,439 - INFO - Epoch 45 completed in 21.31s - val_acc: 0.9198
+2025-12-17 14:29:20,609 - INFO - Epoch 46 completed in 19.98s - val_acc: 0.9163
+2025-12-17 14:29:45,108 - INFO - Epoch 47 completed in 24.41s - val_acc: 0.9153
+2025-12-17 14:30:06,871 - INFO - Epoch 48 completed in 21.66s - val_acc: 0.9193
+2025-12-17 14:30:27,278 - INFO - Epoch 49 completed in 20.30s - val_acc: 0.9203
+2025-12-17 14:30:47,740 - INFO - Epoch 50 completed in 20.25s - val_acc: 0.9093
+2025-12-17 14:30:47,857 - INFO - Training completed!
+2025-12-17 14:30:47,857 - INFO -   Total time: 1051.60s
+2025-12-17 14:30:47,857 - INFO -   Best val accuracy: 0.9203 at epoch 49
+2025-12-17 14:30:59,320 - INFO - Added experiment: ultimate_emotion_detection
+2025-12-17 14:30:59,708 - INFO - Configuration saved to configs/ultimate_emotion_detection_config.json

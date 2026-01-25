@@ -1,0 +1,22 @@
+{
+  "experiment_name": "epochs_epochs_50",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.13913913913913914,
+  "val_loss": 1.7958956956863403,
+  "macro_f1": 0.047123920800927276,
+  "training_time": 346.54787039756775,
+  "epochs_trained": 20,
+  "best_val_accuracy": 0.3388388454914093,
+  "per_class_f1": [
+    0.007220216606498195,
+    0.00847457627118644,
+    0.0,
+    0.242152466367713,
+    0.024896265560165973,
+    0.0
+  ]
+}

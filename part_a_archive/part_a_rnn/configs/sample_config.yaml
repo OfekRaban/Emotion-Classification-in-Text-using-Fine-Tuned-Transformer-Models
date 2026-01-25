@@ -1,0 +1,52 @@
+experiment_name: lstm_glove_baseline
+
+data:
+  train_path: data/raw/train.csv
+  val_path: data/raw/validation.csv
+  test_path: data/raw/test.csv
+  max_len: 60
+  max_words: 20000
+  text_column: text
+  label_column: label
+
+embedding:
+  embedding_type: glove  # 'glove' or 'word2vec'
+  embedding_dim: 100
+  embedding_path: embeddings/glove.6B.100d.txt
+  trainable: false
+  oov_token: <UNK>
+  # Word2Vec specific settings
+  w2v_window: 5
+  w2v_min_count: 2
+  w2v_epochs: 10
+
+model:
+  model_type: lstm  # 'lstm', 'gru', or 'hybrid'
+  units: 128
+  num_layers: 1
+  dropout: 0.2
+  recurrent_dropout: 0.0
+  spatial_dropout: 0.2
+  bidirectional: false
+  dense_units: 0
+  num_classes: 6
+
+training:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: adam
+  loss: categorical_crossentropy
+  use_class_weights: true
+  # Callbacks
+  early_stopping: true
+  patience: 5
+  reduce_lr: true
+  lr_factor: 0.5
+  lr_patience: 3
+  min_lr: 1.0e-07
+  tensorboard: true
+  save_best_only: true
+  monitor: val_accuracy
+  mode: max
+  verbose: 1

@@ -1,0 +1,22 @@
+{
+  "experiment_name": "learning_rate_learning_rate_0.001",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.34234234234234234,
+  "val_loss": 1.7943363189697266,
+  "macro_f1": 0.0903507590167351,
+  "training_time": 438.91483211517334,
+  "epochs_trained": 24,
+  "best_val_accuracy": 0.342342346906662,
+  "per_class_f1": [
+    0.0,
+    0.5157137447936387,
+    0.01932367149758454,
+    0.007067137809187279,
+    0.0,
+    0.0
+  ]
+}

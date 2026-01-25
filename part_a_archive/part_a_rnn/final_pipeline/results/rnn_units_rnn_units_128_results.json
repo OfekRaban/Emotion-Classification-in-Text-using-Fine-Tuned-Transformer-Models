@@ -1,0 +1,22 @@
+{
+  "experiment_name": "rnn_units_rnn_units_128",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.3408408408408408,
+  "val_loss": 1.7937065362930298,
+  "macro_f1": 0.09344313432979794,
+  "training_time": 459.02169942855835,
+  "epochs_trained": 24,
+  "best_val_accuracy": 0.34384384751319885,
+  "per_class_f1": [
+    0.0035971223021582736,
+    0.5138941758660068,
+    0.02,
+    0.014035087719298246,
+    0.0091324200913242,
+    0.0
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "experiment_name": "model_architecture_model_type_gru",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.26326326326326327,
+  "val_loss": 1.7900375127792358,
+  "macro_f1": 0.09186989743637197,
+  "training_time": 473.2430799007416,
+  "epochs_trained": 28,
+  "best_val_accuracy": 0.3478478491306305,
+  "per_class_f1": [
+    0.4209650582362729,
+    0.024861878453038673,
+    0.05426356589147287,
+    0.013745704467353952,
+    0.0,
+    0.037383177570093455
+  ]
+}

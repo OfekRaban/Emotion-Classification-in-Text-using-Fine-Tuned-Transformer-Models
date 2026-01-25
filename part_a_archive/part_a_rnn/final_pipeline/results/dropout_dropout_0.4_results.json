@@ -1,0 +1,22 @@
+{
+  "experiment_name": "dropout_dropout_0.4",
+  "model_type": "gru",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.4,
+  "val_accuracy": 0.34984984984984985,
+  "val_loss": 1.7900712490081787,
+  "macro_f1": 0.09472226938363569,
+  "training_time": 422.8280289173126,
+  "epochs_trained": 24,
+  "best_val_accuracy": 0.3498498499393463,
+  "per_class_f1": [
+    0.010714285714285714,
+    0.5187687687687688,
+    0.010582010582010581,
+    0.028268551236749116,
+    0.0,
+    0.0
+  ]
+}

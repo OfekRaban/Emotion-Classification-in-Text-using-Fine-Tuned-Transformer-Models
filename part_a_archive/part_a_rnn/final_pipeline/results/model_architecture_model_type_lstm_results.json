@@ -1,0 +1,22 @@
+{
+  "experiment_name": "model_architecture_model_type_lstm",
+  "model_type": "lstm",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.9019019019019019,
+  "val_loss": 0.2906334698200226,
+  "macro_f1": 0.8781726641456061,
+  "training_time": 1022.7934453487396,
+  "epochs_trained": 50,
+  "best_val_accuracy": 0.9034034013748169,
+  "per_class_f1": [
+    0.9380863039399625,
+    0.9144144144144144,
+    0.8471177944862155,
+    0.9136690647482014,
+    0.8597285067873304,
+    0.7960199004975125
+  ]
+}

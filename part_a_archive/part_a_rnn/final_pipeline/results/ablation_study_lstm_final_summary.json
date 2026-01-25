@@ -1,0 +1,29 @@
+{
+  "total_experiments": 16,
+  "best_model": {
+    "experiment_name": "lstm_rnn_units_rnn_units_128",
+    "model_type": "lstm",
+    "embedding_type": "glove",
+    "embedding_dim": 100,
+    "rnn_units": 128,
+    "dropout": 0.2,
+    "val_accuracy": 0.9259259259259259,
+    "val_loss": 0.1734091341495514,
+    "macro_f1": 0.90649290735772,
+    "training_time": 1115.8101427555084,
+    "epochs_trained": 50,
+    "best_val_accuracy": 0.9274274110794067,
+    "per_class_f1": [
+      0.9558011049723757,
+      0.9404761904761905,
+      0.8810126582278481,
+      0.9293286219081273,
+      0.8660287081339713,
+      0.8663101604278075
+    ],
+    "study": "rnn_units",
+    "param_name": "rnn_units",
+    "param_value": 128
+  },
+  "timestamp": "2025-12-18T17:56:02.686147"
+}

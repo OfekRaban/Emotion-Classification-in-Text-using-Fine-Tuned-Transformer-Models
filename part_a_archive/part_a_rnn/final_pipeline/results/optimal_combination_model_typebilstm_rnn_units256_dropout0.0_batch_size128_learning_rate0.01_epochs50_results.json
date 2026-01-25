@@ -1,0 +1,22 @@
+{
+  "experiment_name": "optimal_combination_model_typebilstm_rnn_units256_dropout0.0_batch_size128_learning_rate0.01_epochs50",
+  "model_type": "bilstm",
+  "embedding_type": "glove",
+  "embedding_dim": 100,
+  "rnn_units": 256,
+  "dropout": 0.0,
+  "val_accuracy": 0.8933933933933934,
+  "val_loss": 0.41025158762931824,
+  "macro_f1": 0.8695622724806334,
+  "training_time": 539.2441430091858,
+  "epochs_trained": 21,
+  "best_val_accuracy": 0.9089089035987854,
+  "per_class_f1": [
+    0.9195189639222942,
+    0.9124629080118695,
+    0.8311688311688312,
+    0.9033391915641477,
+    0.8486238532110092,
+    0.8022598870056498
+  ]
+}

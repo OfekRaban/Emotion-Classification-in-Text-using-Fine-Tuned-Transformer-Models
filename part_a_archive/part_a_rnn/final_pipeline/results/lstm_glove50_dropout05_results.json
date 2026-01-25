@@ -1,0 +1,22 @@
+{
+  "experiment_name": "lstm_glove50_dropout05",
+  "model_type": "lstm",
+  "embedding_type": "glove",
+  "embedding_dim": 50,
+  "rnn_units": 128,
+  "dropout": 0.5,
+  "val_accuracy": 0.7942942942942943,
+  "val_loss": 0.5220802426338196,
+  "macro_f1": 0.7755710021301465,
+  "training_time": 1052.3606050014496,
+  "epochs_trained": 50,
+  "best_val_accuracy": 0.8058058023452759,
+  "per_class_f1": [
+    0.8279352226720648,
+    0.8202614379084967,
+    0.7407407407407407,
+    0.8105436573311368,
+    0.72,
+    0.7339449541284404
+  ]
+}

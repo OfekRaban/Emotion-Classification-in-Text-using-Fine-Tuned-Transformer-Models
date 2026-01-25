@@ -1,0 +1,22 @@
+{
+  "experiment_name": "lstm_word2vec_baseline",
+  "model_type": "lstm",
+  "embedding_type": "word2vec",
+  "embedding_dim": 50,
+  "rnn_units": 128,
+  "dropout": 0.2,
+  "val_accuracy": 0.21621621621621623,
+  "val_loss": 1.6339924335479736,
+  "macro_f1": 0.1865604397486924,
+  "training_time": 1033.3548011779785,
+  "epochs_trained": 50,
+  "best_val_accuracy": 0.27077075839042664,
+  "per_class_f1": [
+    0.007142857142857143,
+    0.2809917355371901,
+    0.30547550432276654,
+    0.12058212058212059,
+    0.31403118040089084,
+    0.09113924050632911
+  ]
+}
