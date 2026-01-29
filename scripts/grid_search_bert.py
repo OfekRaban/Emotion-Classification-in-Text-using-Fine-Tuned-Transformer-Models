@@ -33,9 +33,8 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# -------------------------------------------------
+
 # Main grid runner
-# -------------------------------------------------
 def main():
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

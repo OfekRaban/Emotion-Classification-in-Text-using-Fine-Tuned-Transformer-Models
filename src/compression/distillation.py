@@ -1,12 +1,9 @@
 import time
 from typing import Dict, Any, Optional
-
 import torch
-from torch.nn.utils import clip_grad_norm_
-
 from src.compression.losses import DistillationLoss
 from src.utils.metrics import compute_metrics
-
+from torch.nn.utils import clip_grad_norm_ # gradient clipping for stability
 
 class DistillationTrainer:
     """
@@ -29,7 +26,8 @@ class DistillationTrainer:
         class_weights: Optional[torch.Tensor] = None,
         max_grad_norm: float = 1.0,
     ):
-        self.teacher = teacher.to(device)
+        # Move models to device
+        self.teacher = teacher.to(device) 
         self.student = student.to(device)
 
         self.train_loader = train_loader
@@ -57,7 +55,7 @@ class DistillationTrainer:
         - attention_mask
         - labels  (or sometimes 'label')
         """
-        # Support both 'labels' and 'label'
+        # Support both 'labels' and 'label' - alignment for different datasets
         if "labels" not in batch and "label" in batch:
             batch["labels"] = batch["label"]
 
@@ -79,18 +77,18 @@ class DistillationTrainer:
         Train the student for one epoch.
         Returns average losses and epoch time.
         """
-        self.student.train()
+        self.student.train() # Set student to training mode(droput,layernorm.. ) . teacher is already eval
 
         total_loss = 0.0
         total_ce = 0.0
         total_kl = 0.0
 
-        start_time = time.time()
+        start_time = time.time() # metric for epoch time
         n_batches = 0
 
         for batch in self.train_loader:
             n_batches += 1
-            self.optimizer.zero_grad(set_to_none=True)
+            self.optimizer.zero_grad(set_to_none=True)  # Reset gradients (dont even build computational graph- efficiency)
 
             batch = self._move_batch_to_device(batch)
             input_ids = batch["input_ids"]
@@ -112,20 +110,20 @@ class DistillationTrainer:
             )
             student_logits = student_out.logits
 
-            # Distillation loss
+            # Distillation loss computation
             loss, ce, kl = self.criterion(
                 student_logits=student_logits,
                 teacher_logits=teacher_logits,
                 labels=labels,
             )
-
+            # Backpropagation and optimization step
             loss.backward()
 
-            # Stabilize training (especially useful with KL term)
+            # Stabilize training (especially because KL term) - if grad norm is too high - scale it down
             if self.max_grad_norm is not None and self.max_grad_norm > 0:
                 clip_grad_norm_(self.student.parameters(), self.max_grad_norm)
 
-            self.optimizer.step()
+            self.optimizer.step()  # Update student parameters
 
             total_loss += float(loss.item())
             total_ce += float(ce.item())
@@ -133,7 +131,7 @@ class DistillationTrainer:
 
         elapsed = time.time() - start_time
 
-        # Avoid division by zero (shouldn't happen, but safe)
+        # Avoid division by zero (shouldn't happen, but for safety!)
         denom = max(1, n_batches)
         return {
             "loss": total_loss / denom,

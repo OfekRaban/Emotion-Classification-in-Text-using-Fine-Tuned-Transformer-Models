@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from typing import Optional
 
 
 class DistillationLoss(nn.Module):
@@ -15,9 +16,9 @@ class DistillationLoss(nn.Module):
 
     def __init__(
         self,
-        alpha: float = 0.3,
-        temperature: float = 2.0,
-        class_weights: torch.Tensor | None = None,
+        alpha: float = 0.3, # weight for the True labels
+        temperature: float = 2.0, #softening factor for teacher
+        class_weights: Optional[torch.Tensor] = None, # optional class weights for CE loss
     ):
         super().__init__()
 
@@ -30,7 +31,7 @@ class DistillationLoss(nn.Module):
         else:
             self.ce_loss = nn.CrossEntropyLoss()
 
-        # KL divergence for soft labels (teacher guidance)
+        # KL divergence for soft labels (teacher guidance) - "how different the distribution is "
         self.kl_loss = nn.KLDivLoss(reduction="batchmean")
 
     def forward(
@@ -52,17 +53,17 @@ class DistillationLoss(nn.Module):
         """
 
         # Hard-label loss (standard supervised learning)
-        ce = self.ce_loss(student_logits, labels)
+        ce = self.ce_loss(student_logits, labels)  #  labels- ground truth
 
         # Soft-label loss (knowledge distillation)
         T = self.temperature
 
-        log_probs_student = F.log_softmax(student_logits / T, dim=1)
+        log_probs_student = F.log_softmax(student_logits / T, dim=1) # student is log-prob, teacher is prob
         probs_teacher = F.softmax(teacher_logits / T, dim=1)
 
         kl = self.kl_loss(log_probs_student, probs_teacher) * (T * T)
 
-        # Combine losses
+        # Combine losses - weighted sum: loss on ground truth + loss on teacher guidance(KL)
         total_loss = self.alpha * ce + (1.0 - self.alpha) * kl
 
         return total_loss, ce.detach(), kl.detach()

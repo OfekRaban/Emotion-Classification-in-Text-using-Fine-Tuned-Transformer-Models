@@ -45,7 +45,7 @@ def compute_class_statistics(train_csv: str, output_path: str):
     with open(output_path, "w") as f:
         yaml.safe_dump(config, f, sort_keys=True)
 
-    print("✅ Class statistics computed successfully")
+    print("Class statistics computed successfully")
     print(f"Train samples: {num_samples}")
     print("Class distribution:")
     for cls, count in sorted(class_counts.items()):
