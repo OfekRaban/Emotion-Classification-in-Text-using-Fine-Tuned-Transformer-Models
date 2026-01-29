@@ -1,7 +1,0 @@
-"""
-Emotion Detection Deep Learning Project
-A comprehensive NLP system for emotion classification using LSTM and GRU networks.
-"""
-
-__version__ = "1.0.0"
-__author__ = "Emotion Detection Team"
