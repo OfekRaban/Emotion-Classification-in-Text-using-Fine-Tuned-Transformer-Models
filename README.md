@@ -1,3 +1,10 @@
+## Trained Model Weights
+The trained DeBERTa-base model weights are provided via GitHub Releases.
+Download `deberta_best.pt` from the latest release, place it under `models/`,
+and run inference using:
+python scripts/run_inference.py --checkpoint models/deberta_best.pt
+
+
 Emotion Classification in Text using Fine-Tuned Transformer Models
 
 This project implements an end-to-end emotion classification system for short text (tweets) using fine-tuned Transformer-based language models.
@@ -70,3 +77,4 @@ Tokenization using pretrained tokenizers
 Padding & truncation based on dataset statistics
 Train / Validation split (test set kept unseen)
 Tokenizer-aware preprocessing is applied (no manual token manipulation).
+
